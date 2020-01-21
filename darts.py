@@ -97,3 +97,7 @@ if __name__ == "__main__":
         if a.lower() == "y":
             first = True
             b = Board(e, p1, p2)
+            overall_p1, overall_p2 = b.overall[p1], b.overall[p2]
+            b = Board(e, p1, p2)
+            b.overall[p1] = overall_p1
+            b.overall[p2] = overall_p2

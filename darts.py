@@ -35,7 +35,7 @@ class Board():
             self.score[p] = temp
         elif s == 0:
             self.overall[p] += 1
-            return "Congratulations! {} wins!\n\n {}Play again? [Y/n]\n".format(p, self), True
+            return "Congratulations! {} wins!\n\n{}Play again? [Y/n]\n".format(p, self), True
         self.turn = abs(self.turn - 1)
         return "{}It's {}'s turn. Input their score and press enter.".format(self, list(self.score.keys())[self.turn]), False
 

@@ -35,7 +35,7 @@ class Board():
             self.score[p] = temp
         elif s == 0:
             self.overall[p] += 1
-            return "Congratulations! {} wins!\n\n {}Play again? [Y/n]\n".format(p, self), True
+            return "Congratulations! {} wins!\n\n{}Play again? [Y/n]\n".format(p, self), True
         self.turn = abs(self.turn - 1)
         return "{}It's {}'s turn. Input their score and press enter.".format(self, list(self.score.keys())[self.turn]), False
 
@@ -97,3 +97,7 @@ if __name__ == "__main__":
         if a.lower() == "y":
             first = True
             b = Board(e, p1, p2)
+            overall_p1, overall_p2 = b.overall[p1], b.overall[p2]
+            b = Board(e, p1, p2)
+            b.overall[p1] = overall_p1
+            b.overall[p2] = overall_p2
